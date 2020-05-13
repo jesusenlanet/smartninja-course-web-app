@@ -1,16 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Hello, SmartNinja</title>
-        <link rel="stylesheet" href="/static/css/style.css">
+{% extends 'base.html' %}
+{% block title %}
+    <title>Index | SmartNinja with Jinja</title>
+{% endblock title %}
+{% block content %}
+    <p>Hello, index.html here!</p>
 
-    </head>
-
-    <body>
-        <h1>Welcome back to HTML ;)</h1>
-        <a href="/about">About</a>
-        <a href="/portfolio">Portfolio</a>
-        <img src="/static/img/smartninja-logo.png">
-    </body>
-</html>
+    <p>{{ some_text }}</p>
+    <p>Current year: {{ current_year }}</p>
+    <p>Current second: {{ current_second}}</p>
+    {% if cities %}
+        {% for city in cities %}
+            <p>{{ city }}</p>
+        {% endfor %}
+    {% else %}
+        <p>No cities detected!!</p>
+    {% endif %}
+{% endblock content %}
