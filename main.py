@@ -10,8 +10,6 @@ def index():
 
 @app.route('/about')
 def about_me():
-    caracter = "a"
-    int(caracter)
     return render_template("about.html")
 
 
